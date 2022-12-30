@@ -95,3 +95,11 @@
 ;; Set local leader to ,
 (setq doom-localleader-key ",")
 
+
+;; Use `,,` to close a commit message and `,k' to cancel
+(map! :after magit
+      :map text-mode-map
+      :localleader
+      "," #'with-editor-finish
+      "k" #'with-editor-cancel)
+
