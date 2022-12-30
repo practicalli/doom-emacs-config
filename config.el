@@ -103,3 +103,12 @@
       "," #'with-editor-finish
       "k" #'with-editor-cancel)
 
+
+;; ---------------------------------------
+;; Projects
+;; Define a project path to discover projects using SPC Tab D
+;; https://docs.projectile.mx/projectile/usage.html
+;; (setq projectile-project-search-path '("~/projects/" "~/work/" ("~/github" . 1)))
+(setq projectile-project-search-path '(("~/projects" . 2) ("~/.config" . 1)))
+;; ---------------------------------------
+
