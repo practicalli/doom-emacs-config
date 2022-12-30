@@ -88,3 +88,10 @@
 ;; https://discourse.doomemacs.org/t/typing-jk-deletes-j-and-returns-to-normal-mode/59/7
 (after! evil-escape
   (setq evil-escape-key-sequence "fd"))
+
+;; https://discourse.doomemacs.org/t/what-are-leader-and-localleader-keys/153
+;; SPC is leader key default
+;; SPC m is local leader default
+;; Set local leader to ,
+(setq doom-localleader-key ",")
+
