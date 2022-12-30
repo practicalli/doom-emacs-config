@@ -77,3 +77,14 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+;; --------------------------------------------------
+;; Practicalli Configuration
+;; Search https://discourse.doomemacs.org/ for example configuration
+
+;; Key binding guide
+;; https://discourse.doomemacs.org/t/how-to-re-bind-keys/56
+
+;; fd as Esc key binding
+;; https://discourse.doomemacs.org/t/typing-jk-deletes-j-and-returns-to-normal-mode/59/7
+(after! evil-escape
+  (setq evil-escape-key-sequence "fd"))
