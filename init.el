@@ -14,6 +14,14 @@
 ;;      Alternatively, press 'gd' (or 'C-c c d') on a module to browse its
 ;;      directory (for easy access to its source code).
 
+
+;; Emacs Native Compilation
+;; Emacs 28 with native compilation enabled will compile each package
+;; the first time it is added or if the major version of Emacs changes
+;; Minimise resources used by native compilation
+(setq native-comp-async-jobs-number 1)
+
+
 (doom! :input
        ;;bidi              ; (tfel ot) thgir etirw uoy gnipleh
        ;;chinese
