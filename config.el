@@ -91,6 +91,8 @@
 ;; Which-key and Evil Key Bindings - Spacemacs style
 (load! "+bindings")
 
+;; Clojure mode & Cider Configuration + key bindings
+(load! "+clojure")
 
 
 ;; ---------------------------------------
