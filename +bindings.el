@@ -61,6 +61,14 @@
          :desc "Toggle Last" "TAB" #'evil-switch-to-windows-last-buffer))
 
 
+;; Treemacs
+;; Toggle treemacs project browser from project menu
+(map! :leader
+      (:prefix "p"
+         "t" nil  ; disable project todos key binding
+         :desc "Project browser" "t" #'+treemacs/toggle))
+
+
 ;; Change SPC g s to call Magit Status, rather than stage hunk
 ;; - Remove stage-hunk-at-point
 ;; - Add SPC g s calling magit status
