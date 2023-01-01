@@ -37,7 +37,11 @@
   :after lsp-mode
   :commands lsp-ui-mode
   :config
-  (setq lsp-ui-doc-enable nil
+  (setq lsp-ui-doc-enable nil       ;; disable all doc popups
+        lsp-ui-sideline-enable nil  ;; disable sideline bar for less distraction
+        treemacs-space-between-root-nodes nil  ;; no spacing in treemacs views
+        lsp-log-io t  ; Log client-server json communication
+        lsp-headerline-breadcrumb-enable t  ; Breadcrumb trail for file path
         lsp-ui-peek-enable t))
 
 ;; End of LSP
