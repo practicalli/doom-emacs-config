@@ -85,6 +85,16 @@
 ;; Open Doom Emacs maximised
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
+
+;; ---------------------------------------
+;; Modeline
+;; SPC h d modules modeline
+;; - add current workspace name
+;; - add major mode icon
+(setq doom-modeline-persp-name t
+      doom-modeline-major-mode-icon t)
+;; ---------------------------------------
+
 ;; ---------------------------------------
 ;; Additional Configuration
 
