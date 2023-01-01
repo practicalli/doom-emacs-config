@@ -81,6 +81,10 @@
 ;; Practicalli Configuration
 ;; Search https://discourse.doomemacs.org/ for example configuration
 
+
+;; Open Doom Emacs maximised
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 ;; Key binding guide
 ;; https://discourse.doomemacs.org/t/how-to-re-bind-keys/56
 
