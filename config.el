@@ -94,6 +94,8 @@
 ;; Clojure mode & Cider Configuration + key bindings
 (load! "+clojure")
 
+;; LSP Configuration
+(load! "+lsp")
 
 ;; ---------------------------------------
 
