@@ -69,14 +69,8 @@
          :desc "Project browser" "t" #'+treemacs/toggle))
 
 
-;; Change SPC g s to call Magit Status, rather than stage hunk
-;; - Remove stage-hunk-at-point
-;; - Add SPC g s calling magit status
-;; NOT WORKING
-(map! :after magit
-      :localleader
-      (:prefix-map "g"
-        :desc "" "s" nil
+;; Change SPC g s to call Magit Status, rather than stage hunk at point
+(map! :leader
+      (:prefix "g"
+        :desc "" "s" nil  ; remove existing binding
         :desc "Magit Status" "s" #'magit-status))
-
-;; :after vc-gutter
