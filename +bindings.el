@@ -13,10 +13,9 @@
 ;; Set local leader to `,'
 (setq doom-localleader-key ",")
 
-;; (map! :leader
-;;       "<tab>" nil
-;;       "<tab>" #'projectile-previous-project-buffer)
-
+(map! :leader
+      "SPC" nil
+      :desc "M-x" "SPC" #'execute-extended-command)
 
 ;; Use `,,` to close a commit message and `,k' to cancel
 (map! :after magit
