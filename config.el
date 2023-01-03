@@ -93,9 +93,20 @@
 ;; SPC h d modules modeline
 ;; - add current workspace name
 ;; - add major mode icon
-(setq doom-modeline-persp-name t
-      doom-modeline-major-mode-icon t)
+;;
+    ;; (after! doom-modeline
+    ;;   (doom-modeline-def-modeline 'main
+    ;;     '(bar matches buffer-info remote-host buffer-position parrot selection-info)
+    ;;     '(misc-info minor-modes checker input-method buffer-encoding major-mode process vcs "  "))) ; <-- added padding here
+
+(after! doom-modeline
+  (setq doom-modeline-persp-name t
+        doom-modeline-major-mode-icon t
+        doom-modeline-workspace-name t))
+
+
 ;; ---------------------------------------
+
 
 ;; ---------------------------------------
 ;; Additional Configuration
