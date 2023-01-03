@@ -79,34 +79,34 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+
 ;; --------------------------------------------------
 ;; Practicalli Configuration
 ;; Search https://discourse.doomemacs.org/ for example configuration
 
+;; Practicalli Logo on startup dashboard
 (setq fancy-splash-image "~/.config/doom/images/practicalli-logo.svg")
-
 
 ;; Open Doom Emacs maximised
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-
-;; ---------------------------------------
 ;; Modeline
-;; SPC h d modules modeline
 ;; - add current workspace name
 ;; - add major mode icon
-;;
-    ;; (after! doom-modeline
-    ;;   (doom-modeline-def-modeline 'main
-    ;;     '(bar matches buffer-info remote-host buffer-position parrot selection-info)
-    ;;     '(misc-info minor-modes checker input-method buffer-encoding major-mode process vcs "  "))) ; <-- added padding here
-
 (after! doom-modeline
   (setq doom-modeline-persp-name t
         doom-modeline-major-mode-icon t
         doom-modeline-workspace-name t))
 
+;; Projects
+;; Define a project path to discover projects using SPC Tab D
+;; https://docs.projectile.mx/projectile/usage.html
+;; (setq projectile-project-search-path '("~/projects/" "~/work/" ("~/github" . 1)))
+(setq projectile-project-search-path '(("~/projects" . 2) ("~/.config" . 1)))
 
+;; Disable projectile cache - saves requirement to invalidate cache when moving files
+;; (setq projectile-enable-caching nil)
 ;; ---------------------------------------
 
 
@@ -122,10 +122,6 @@
 ;; LSP Configuration
 (load! "+lsp")
 
-;; ---------------------------------------
-
-
-;; ---------------------------------------
 ;; Magit and Version Control
 (load! "+git")
 
@@ -133,11 +129,3 @@
 (load! "+org-mode")
 
 ;; ---------------------------------------
-;; ---------------------------------------
-;; Projects
-;; Define a project path to discover projects using SPC Tab D
-;; https://docs.projectile.mx/projectile/usage.html
-;; (setq projectile-project-search-path '("~/projects/" "~/work/" ("~/github" . 1)))
-(setq projectile-project-search-path '(("~/projects" . 2) ("~/.config" . 1)))
-;; ---------------------------------------
-
