@@ -53,3 +53,8 @@
 
 ;; Koacha test runner in Emacs
 (package! kaocha-runner)
+
+;; Keycast
+;; latest release 2020-11-17
+(package! keycast :pin "16d9961d15536054632be1eff75fd0fb1a4420f8")
+
