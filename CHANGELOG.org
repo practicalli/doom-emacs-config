@@ -1,0 +1,47 @@
+#+TITLE: Changelog - Practicalli Doom Emacs Config
+
+* Unreleased
+
+* 2023-01-03
+** Added
+*** package: [[https://github.com/tarsius/keycast][Keycast package]] to show keys and commands on the modeline
+*** bindings: ~SPC t k~ toggles keycast mode
+*** +package-configuration.el created to configure packages outside of Doom modules
+
+* 2023-01-03
+** Added
+*** module: add unicode support for more characters
+*** bindings: override SPC SPC to call M-x
+
+* 2023-01-01
+** Added
+*** snippets: mkdocs snippets
+*** config: modeline workspace name and major mode icon
+*** git: separate config file
+*** packages: add kaocha-runner package
+*** bindings: fix magit status key binding spc g s
+*** bindings: spc p t to toggle treemacs view of project
+*** module: add doom with LSP support
+*** module: add font ligature support
+*** module: add emoji support
+*** init: minimise CPU usage during native compilation
+*** config: maximise Emacs frame on startup
+*** module: add make for Makefile support
+*** module: use magit with forge
+*** module: use treemacs with lsp
+*** config: projectile search path for project discovery
+*** config: magit key bindings for commit message
+*** config: , as local leader
+*** module: Docker support
+*** module: JSON syntax support
+*** module: yaml syntax support
+*** lsp: enable breadcrumbs in LSP UI, add docs
+*** module: clojure and LSP support
+*** module: edit with multiple cursors
+*** module: add treemacs for visual file browser
+*** module: remove long line tilde marks from fringe
+*** config: set relative line numbers for vim line jumps
+*** config: set doom-gruvbox theme
+*** binding: Spacemacs sytle key bindings for working with project files and buffers
+*** binding: fd as escape key binding
+*** Set localleader to ~,~
