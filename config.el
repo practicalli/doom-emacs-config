@@ -83,6 +83,8 @@
 ;; Practicalli Configuration
 ;; Search https://discourse.doomemacs.org/ for example configuration
 
+(setq fancy-splash-image "~/.config/doom/images/practicalli-logo.svg")
+
 
 ;; Open Doom Emacs maximised
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
