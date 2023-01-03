@@ -73,3 +73,12 @@
       (:prefix "g"
         :desc "" "s" nil  ; remove existing binding
         :desc "Magit Status" "s" #'magit-status))
+
+;; Format
+(map! :leader
+       (:prefix ("=" . "format")
+         :desc "buffer" "=" #'+format/buffer
+         :desc "buffer" "b" #'+format/buffer
+         :desc "region" "r" #'+format/region
+         :desc "whitespace" "w" #'delete-trailing-whitespace))
+
