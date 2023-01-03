@@ -29,3 +29,7 @@ The most noticalbe key bindings changed from the Doom Emacs defaults include:
 ** Org-mode
 TODO: ~, b d~ to add code blocks via babel demarcate
 TODO: review org-mode key bindings and refactor
+
+** Screencasts
+
+~SPC t k~ to enable ~keycast-mode~ which shows key bindings and commands in the modeline as you type, exspecially useful for screencasts (or to learn what commands the key bindings are calling)
