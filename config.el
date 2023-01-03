@@ -129,6 +129,8 @@
 ;; Magit and Version Control
 (load! "+git")
 
+;; Org-mode  configuraiton
+(load! "+org-mode")
 
 ;; ---------------------------------------
 ;; ---------------------------------------
