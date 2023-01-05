@@ -5,7 +5,7 @@ A personal configuration for Doom Emacs with a focus on creating a similar key b
 Doom Emacs default key bindings have been changed significantly and further changes will be made as this project evolves.  Therefore this configuration is probably not directly applicable for those already comfortable with the Doom Emacs maintainers workflow (although there are quite a few commonalities).
 
 
-** Rebount keys
+** Rebound keys
 The most noticalbe key bindings changed from the Doom Emacs defaults include:
 
 ~,~ is set to local leader and ~SPC~ remains the leader key
@@ -25,10 +25,13 @@ The most noticalbe key bindings changed from the Doom Emacs defaults include:
 ~, k~ cancel the commit message without commit (text-mode-map)
 
 
+** Org-mode [1/2]
+- [-] Pretty checkboxes [1/2]
+  - [X] Added code from practicalli/spacemacs.d
+  - [ ] Review why checkbox icons not being used
+- [ ] Review org-mode key bindings
+  - [ ]  ~, b d~ to add code blocks via babel demarcate
 
-** Org-mode
-TODO: ~, b d~ to add code blocks via babel demarcate
-TODO: review org-mode key bindings and refactor
 
 ** Screencasts
 

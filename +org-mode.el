@@ -47,8 +47,5 @@
    (push '("[-]" . "❍" ) prettify-symbols-alist)
    (prettify-symbols-mode)))
 
-;; use org-re-reveal instead of org-reveal (which hasnt been updated in ages and breaks org-mode 9.2)
-;; (use-package org-re-reveal :after org)
-
 ;; End of Org-mode Configuration
 ;; ---------------------------------------
