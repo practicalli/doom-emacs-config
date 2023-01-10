@@ -28,7 +28,7 @@
 (map! :leader
        (:prefix-map ("TAB" . nil))
        (:prefix ("l". "Layouts")
-         :desc "List Layout" "<tab>" #'+workspace/other
+         :desc "Last Layout" "<tab>" #'+workspace/other
          :desc "Display Tabs" "d" #'+workspace/display
          :desc "Delete layout" "D" #'+workspace/delete
          :desc "Layout list" "l" #'+workspace/switch-to
