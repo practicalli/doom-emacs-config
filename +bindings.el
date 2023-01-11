@@ -17,13 +17,6 @@
       "SPC" nil
       :desc "M-x" "SPC" #'execute-extended-command)
 
-;; Use `,,` to close a commit message and `,k' to cancel
-(map! :after magit
-      :map text-mode-map
-      :localleader
-      "," #'with-editor-finish
-      "k" #'with-editor-cancel)
-
 ;; Layout keys - disable `SPC TAB' workspace prefix
 (map! :leader
        (:prefix-map ("TAB" . nil))
@@ -82,3 +75,11 @@
          :desc "region" "r" #'+format/region
          :desc "whitespace" "w" #'delete-trailing-whitespace))
 
+
+;; Use `,,` to close a commit message and `,k' to cancel
+;; Doom maps `ZZ` to commit, `ZQ' to quit
+;; (map! :after magit
+;;       :map text-mode-map
+;;       :localleader
+;;       "," #'with-editor-finish
+;;       "k" #'with-editor-cancel)
