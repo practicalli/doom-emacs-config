@@ -8,7 +8,11 @@
   :config
 
   ;; Core
-  (setq lsp-headerline-breadcrumb-enable t  ; Breadcrumb trail for file path
+  (setq
+        ;; https://emacs-lsp.github.io/lsp-mode/page/settings/headerline/
+        lsp-headerline-breadcrumb-enable t  ; Breadcrumb trail
+        lsp-headerline-breadcrumb-segments '(symbols) ; namespace & symbols, no file path
+
         lsp-signature-render-documentation nil
         lsp-signature-function 'lsp-signature-posframe
         lsp-semantic-tokens-enable t
