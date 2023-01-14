@@ -3,6 +3,9 @@
 ;; ---------------------------------------
 ;; Version Control configuration
 
+;; Load magit-todos
+(use-package! magit-todos)
+
 ;; Location of developer tokens - default ~/.authinfo
 ;; Use XDG_CONFIG_HOME location or HOME
 ;; Optional:  (setq auth-source-cache-expiry nil)   ; default is 7200 (2h)
@@ -21,7 +24,17 @@
 ;; - checks for overlong-summary-line non-empty-line
 ;; (setq git-commit-summary-max-length 50
 ;;       git-commit-style-convention-checks '(overlong-summary-line non-empty-second-line))
-(setq git-commit-summary-max-length 54)
+(setq git-commit-summary-max-length 60
+
+      ;; Highlight specific characters changed
+      magit-diff-refine-hunk 'all
+
+      ;; Show project TODO lines in Magit Status
+      magit-todos-mode t
+
+      ;; Show Libravatar of commit author
+      magit-revision-show-gravatars '("^Author:     " . "^Commit:     ")
+      )
 
 
 ;; Location of Git repositories
@@ -50,6 +63,9 @@
 ;; Blacklist specific accounts, over-riding forge-owned-accounts
 ;; (setq forge-owned-blacklist
 ;;       '(("bad-hacks" "really-bad-hacks")))
+;;
+;;
+;;
 ;;
 ;; End of Version Control configuration
 ;; ---------------------------------------
