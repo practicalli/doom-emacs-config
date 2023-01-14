@@ -8,7 +8,7 @@
   :config
 
   ;; Core
-  (setq lsp-headerline-breadcrumb-enable nil
+  (setq lsp-headerline-breadcrumb-enable t  ; Breadcrumb trail for file path
         lsp-signature-render-documentation nil
         lsp-signature-function 'lsp-signature-posframe
         lsp-semantic-tokens-enable t
@@ -16,7 +16,6 @@
         lsp-use-plists nil)
   (add-hook 'lsp-after-apply-edits-hook (lambda (&rest _) (save-buffer)))
   (add-hook 'lsp-mode-hook (lambda () (setq-local company-format-margin-function #'company-vscode-dark-icons-margin))))
-
 
 (use-package! lsp-treemacs
   :config
@@ -31,7 +30,6 @@
         lsp-ui-sideline-enable nil  ;; disable sideline bar for less distraction
         treemacs-space-between-root-nodes nil  ;; no spacing in treemacs views
         lsp-log-io t  ; Log client-server json communication
-        lsp-headerline-breadcrumb-enable t  ; Breadcrumb trail for file path
         lsp-ui-peek-enable t))
 
 ;; End of LSP
