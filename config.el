@@ -107,6 +107,9 @@
 
 ;; Disable projectile cache - saves requirement to invalidate cache when moving files
 ;; (setq projectile-enable-caching nil)
+;;
+;; Delete whitespace on save, including in markdow-mode
+(setq ws-butler-global-exempt-modes '(special-mode comint-mode term-mode eshell-mode diff-mode))
 ;; ---------------------------------------
 
 
