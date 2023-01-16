@@ -67,6 +67,17 @@
         :desc "" "s" nil  ; remove existing binding
         :desc "Magit Status" "s" #'magit-status))
 
+;; Diff of files
+(map! :leader
+       (:prefix "f"
+        :desc "" "d" nil  ; remove existing binding
+        (:prefix ("d" . "diff")
+         :desc "3 files" "3" #'ediff3
+         :desc "ediff" "d" #'diff
+         :desc "ediff" "e" #'ediff
+         :desc "version" "r" #'vc-root-diff
+         :desc "version" "v" #'vc-ediff)))
+
 ;; Format
 (map! :leader
        (:prefix ("=" . "format")
