@@ -3,6 +3,11 @@
 ;; Key binding guide
 ;; https://discourse.doomemacs.org/t/how-to-re-bind-keys/
 ;; NOTE: use `map!' macro for convienience
+;;
+;; Bind key onto Evil Normal state
+;; (map! :after evil
+;;       :map evil-normal-state-map
+;;       "/" #'+default/search-buffer)
 
 ;; ------------------------------------------------
 ;; Key binding vars
@@ -56,6 +61,11 @@
          "TAB" nil
          :desc "Last Buffer" "TAB" #'evil-switch-to-windows-last-buffer)
 
+;; Replace Doom `/' highlight with buffer-search
+(map! :after evil
+      :map evil-normal-state-map
+      "/" #'+default/search-buffer)
+
 (map! :leader
        (:prefix "b"
          :desc "Dashboard" "h" #'+doom-dashboard/open
@@ -97,7 +107,6 @@
 
 
 ;; ------------------------------------------------
-
 ;; Experiments
 ;; Use `,,` to close a commit message and `,k' to cancel
 ;; Doom maps `ZZ` to commit, `ZQ' to quit
