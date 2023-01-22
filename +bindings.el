@@ -1,7 +1,8 @@
 ;;; +bindings.el -*- lexical-binding: t; -*-
 
 ;; Key binding guide
-;; https://discourse.doomemacs.org/t/how-to-re-bind-keys/56
+;; https://discourse.doomemacs.org/t/how-to-re-bind-keys/
+;; NOTE: use `map!' macro for convienience
 
 ;; fd as Esc key binding
 ;; https://discourse.doomemacs.org/t/typing-jk-deletes-j-and-returns-to-normal-mode/59/7
