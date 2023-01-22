@@ -4,15 +4,23 @@
 ;; https://discourse.doomemacs.org/t/how-to-re-bind-keys/
 ;; NOTE: use `map!' macro for convienience
 
+;; ------------------------------------------------
+;; Key binding vars
+
 ;; fd as Esc key binding
 ;; https://discourse.doomemacs.org/t/typing-jk-deletes-j-and-returns-to-normal-mode/59/7
 (after! evil-escape
   (setq evil-escape-key-sequence "fd"))
 
 ;; https://discourse.doomemacs.org/t/what-are-leader-and-localleader-keys/153
-;; Defaults: `SPC' leader key, `SPC m' local leader
-;; Set local leader to `,'
+;; Doom Defaults: `SPC' leader key, `SPC m' local leader
+;; Practicalli: Set local leader to `,'
 (setq doom-localleader-key ",")
+;; ------------------------------------------------
+
+
+;; ------------------------------------------------
+;; Over-ride or add to Doom Emacs default key bindings
 
 (map! :leader
       "SPC" nil
@@ -88,6 +96,9 @@
          :desc "whitespace" "w" #'delete-trailing-whitespace))
 
 
+;; ------------------------------------------------
+
+;; Experiments
 ;; Use `,,` to close a commit message and `,k' to cancel
 ;; Doom maps `ZZ` to commit, `ZQ' to quit
 ;; (map! :after magit
