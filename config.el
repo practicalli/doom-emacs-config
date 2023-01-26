@@ -96,8 +96,8 @@
 ;; - add major mode icon
 (after! doom-modeline
   (setq doom-modeline-persp-name t
-        doom-modeline-major-mode-icon t
-        doom-modeline-workspace-name t))
+        doom-modeline-major-mode-icon t))
+
 
 ;; Projects
 ;; Define a project path to discover projects using SPC Tab D
