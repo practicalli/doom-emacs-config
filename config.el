@@ -141,4 +141,8 @@
 ;; Structural Editing - Smartparens
 (load! "+smartparens.el")
 
+;; Configure packages outside of Doom modules
+;; - keycast
+(load! "+package-config")
+
 ;; ---------------------------------------
