@@ -135,4 +135,7 @@
 ;; Org-mode  configuraiton
 (load! "+org-mode")
 
+;; Structural Editing - Smartparens
+(load! "+smartparens.el")
+
 ;; ---------------------------------------
