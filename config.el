@@ -132,6 +132,9 @@
 ;; Magit and Version Control
 (load! "+git")
 
+;; Markdown mode
+(load! "+markdown.el")
+
 ;; Org-mode  configuraiton
 (load! "+org-mode")
 
