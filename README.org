@@ -1,11 +1,12 @@
 * Practicalli Doom Emacs Config
-
 A personal configuration for Doom Emacs with a focus on creating a similar key binding and menu experience to that of Spacemacs, as [[https://jr0cket.co.uk/2015/08/spacemacs-first-impressions-from-an-emacs-driven-developer.html][Practicalli has used Spacemacs since 2015]].
 
 Doom Emacs default key bindings have been changed significantly and further changes will be made as this project evolves.  Therefore this configuration is probably not directly applicable for those already comfortable with the Doom Emacs maintainers workflow (although there are quite a few commonalities).
 
 
-** Rebound keys
+** Notable key binding changes
+~+bindings.el~ contains all the additonal, remapped and delete Doom key bindings to provide a more mnemonic menu.  Module specific configurations may also contain key bindings that override the Doom defaults.
+
 The most noticalbe key bindings changed from the Doom Emacs defaults include:
 
 ~,~ is set to local leader and ~SPC~ remains the leader key
@@ -18,13 +19,6 @@ The most noticalbe key bindings changed from the Doom Emacs defaults include:
 
 ~fd~ alternative key binding to pressing ~ESC~ key
 
-** Added keys
-
-~, ,~ close the commit message and create the commit (text-mode-map)
-
-~, k~ cancel the commit message without commit (text-mode-map)
-
-
 ** Org-mode [1/2]
 - [-] Pretty checkboxes [1/2]
   - [X] Added code from practicalli/spacemacs.d
@@ -32,7 +26,13 @@ The most noticalbe key bindings changed from the Doom Emacs defaults include:
 - [ ] Review org-mode key bindings
   - [ ]  ~, b d~ to add code blocks via babel demarcate
 
-
 ** Screencasts
-
 ~SPC t k~ to enable ~keycast-mode~ which shows key bindings and commands in the modeline as you type, exspecially useful for screencasts (or to learn what commands the key bindings are calling)
+
+** Git
+For Commit message buffer Doom key binding kept rather than use Spacemacs:
+- ~Z Z~ rather than  ~, ,~ to confirm the message and commit
+- ~Z Q~  rather than ~, k~ to cancel the message without commit
+
+** Clojure
+~+clojure.el~ configuration overrides many CIDER variables defined in the clojure Doom module, as well as adding keybindings similar to the Spacemacs Clojure layer.
