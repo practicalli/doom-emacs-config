@@ -88,6 +88,31 @@
 
 
 ;; ---------------------------------------
+;; Portal Integration
+
+;; def portal to the dev namespace to allow dereferencing via @dev/portal
+(defun portal.api/open ()
+  (interactive)
+  (cider-nrepl-sync-request:eval
+    "(do (ns dev) (def portal ((requiring-resolve 'portal.api/open))) (add-tap (requiring-resolve 'portal.api/submit)))"))
+
+(defun portal.api/clear ()
+  (interactive)
+  (cider-nrepl-sync-request:eval "(portal.api/clear)"))
+
+(defun portal.api/close ()
+  (interactive)
+  (cider-nrepl-sync-request:eval "(portal.api/close)"))
+
+;; Key bindings added to Debug Clojure section
+;; - , d p p - portal open
+;; - , d p c - portal clear
+;; - , d p D - portal clear
+
+;; ---------------------------------------
+
+
+;; ---------------------------------------
 ;; Clojure key bindings
 ;; TODO: review evaluation key bindings from Spacemacs
 
@@ -104,6 +129,10 @@
         :desc "expression" "f" #'cider-inspect-defun-at-point
         :desc "inspector" "i" #'cider-inspect
         :desc "last result" "l" #'cider-inspect-last-result
+        (:prefix ("p" . "portal")
+         :desc "Clear" "c" #'portal.api/open
+         :desc "Clear" "D" #'portal.api/close
+         :desc "Open" "p" #'portal.api/open)
         :desc "value" "v" #'cider-inspect-expr))
 
       ;; Evaluation
