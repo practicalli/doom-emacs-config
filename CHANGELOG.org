@@ -2,6 +2,51 @@
 
 * Unreleased
 
+* 2023-02-11
+** Added
+*** main init: enable lookup of words in online dictionary
+*** init: add +peek flag to lsp module
+*** init: enable spell with flyspell flag
+*** init: enable vterm terminal support
+*** init: add ranger support to dired
+*** readme: update description of project
+*** clojure: portal commands with nrepl sync
+*** clojure: refactor and update cider variable settings
+*** config: remove vertico sort function
+*** package: use latest version of CIDER available
+*** practicalli/main package: load package-config.el file
+*** practicalli/main markdown: add table keys, move toggle menu
+*** smartparens: key bindings for structural editing
+*** config: remove doom modeline workspace name variable
+*** binding: buffer search replaces / hightlight search
+*** binding: binding sections with line comment
+*** binding: binding guilde url update
+*** config: dark version of new practicalli logo
+*** binding: add file diff binding menu
+*** config: enable ws-butler for markdow mode
+*** git: magit-todos, refine-hunk & gravitar
+*** lsp: headline-breadcrumb - show only symbols
+*** lsp: headline-breadcrumb set twice
+*** binding: use doom bindings to commit / abort commit
+*** binding: last layout for SPC TAB binding
+*** content: minor content corrections
+*** module: Doom yaml module with LSP support
+*** module: Doom web module with LSP support
+*** module: Doom json module with LSP support
+*** config: clean up practicalli specific configs
+*** org-mode: added TODO highlights and file locations
+*** dashboard: practicalli logo svg added
+*** lsp: clean up configuration, remove local lsp server
+*** git: clean up git config and load from main config
+*** clojure: key bindings and functions from Spacemacs
+*** readme: add screencats docs for keycast mode
+*** readme: fix link to Spacemacs article
+*** binding: format commands & whitespace cleanup
+*** changelog: updated changelog from start of project
+*** config: wrap doom-modeline custom config in after!
+*** config: set doom-font to size 16
+*** config: doom-big-font set to fira code size 24
+
 * 2023-01-03
 ** Added
 *** package: [[https://github.com/tarsius/keycast][Keycast package]] to show keys and commands on the modeline
@@ -45,3 +90,47 @@
 *** binding: Spacemacs sytle key bindings for working with project files and buffers
 *** binding: fd as escape key binding
 *** Set localleader to ~,~
+
+
+
+
+
+a0ebce1 * package: keycast package and key binding
+fcc7835 * module: add unicode support for more characters
+491db2a * readme: draft readme to explain the purpose of repo
+9ea6a44 * bindings: override SPC SPC to call M-x
+74d4660 * snippets: mkdocs snippets
+854d845 * config: modeline workspace name and major mode icon
+bd7968c * git: separate config file
+a0d52c8 * packages: add kaocha-runner package
+41fc80e * bindings: fix magit status key binding spc g s
+2ef7039 * bindings: spc p t to toggle treemacs view of project
+f31946b * lsp: enable breadcrumbs in LSP UI, add docs
+db2e59e * lsp: separate config file
+51df9db * clojure: separate config file & key bindings
+1d407ef * bindings: separate bindings config file
+8f3562b * module: add doom with LSP support
+9932969 * module: add font ligature support
+00b0f03 * module: add emoji support
+2bd3064 * init: minimise CPU usage during native compilation
+ab37811 * config: maximise Emacs frame on startup
+d398162 * module: add make for Makefile support
+62a3774 * module: use magit with forge
+19b42c6 * module: use treemacs with lsp
+1f78b82 * config: projectile search path for project discovery
+12a8b98 * config: magit key bindings for commit message
+def59c7 * config: , as local leader
+57efde4 * config: fd as escape key binding
+64ff101 * module: Docker support
+1d9e609 * module: JSON syntax support
+7ff2562 * module: yaml syntax support
+fadfb20 * module: clojure and LSP support
+a13f604 * module: edit with multiple cursors
+6ff29c1 * module: format on save
+2bcc173 * module: add treemacs for visual file browser
+23be776 * module: remove long line tilde marks from fringe
+71ab537 * config: set relative line numbers for vim line jumps
+2c50e68 * config: set doom-gruvbox theme
+f4fbc43 * config: set fira code 14 font
+2ace490 * config: add user identity
+9b666b7 * config: default doom config from doom install
