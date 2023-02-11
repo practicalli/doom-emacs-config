@@ -19,21 +19,29 @@
 (use-package! cider
   :after clojure-mode
   :config
-  (setq cider-show-error-buffer t               ;'only-in-repl
-        cider-font-lock-dynamically nil         ; use lsp semantic tokens
-        cider-eldoc-display-for-symbol-at-point nil ; use lsp
-        cider-prompt-for-symbol nil
-        cider-use-xref nil                      ; use lsp
-
-        cider-repl-pop-to-buffer-on-connect nil ; REPL buffer shown at starup
-        cider-repl-display-help-banner nil      ; disable help banner
+  (setq cider-show-error-buffer t               ; show stacktrace buffer
         cider-print-fn 'puget                   ; pretty printing with sorted keys / set values
         cider-result-overlay-position 'at-point ; results shown right after expression
         cider-overlays-use-font-lock t
+
+        ;; LSP features over Cider features
+        cider-font-lock-dynamically nil         ; use lsp semantic tokens
+        cider-eldoc-display-for-symbol-at-point nil ; use lsp
+        cider-use-xref nil                      ; cider xref to find definitions
+
+        ;; minimise the repl buffer activity
         cider-repl-buffer-size-limit 100        ; limit lines shown in REPL buffer
-        cider-repl-history-size 42
+        cider-repl-display-help-banner nil      ; disable help banner
+        cider-repl-history-size 10              ; limit command history
+        cider-repl-history-file nil             ; write repl buffer commands to file DOOMDIR/.local/cider-repl-history
+        cider-repl-history-highlight-current-entry nil   ; cider default
+        cider-repl-history-highlight-inserted-item nil   ; cider default
+        cider-repl-history-quit-action 'quit-window ; restores previous emacs window config (cider default )
+        cider-repl-pop-to-buffer-on-connect nil ; REPL buffer shown at starup (nil does not show buffer)
+        cider-repl-use-clojure-font-lock nil
+        cider-repl-use-pretty-printing nil
         )
-  (set-lookup-handlers! '(cider-mode cider-repl-mode clj-refactor-mode) nil) ; use lsp
+  (set-lookup-handlers! '(cider-mode cider-repl-mode) nil) ; use lsp
   (set-popup-rule! "*cider-test-report*" :side 'right :width 0.4)
   (set-popup-rule! "^\\*cider-repl" :side 'bottom :quit nil)
   ;; use lsp completion
@@ -46,8 +54,8 @@
 (use-package! kaocha-runner
   :after cider
   :config
-  (setq clojure-enable-kaocha-runner t          ; enable Kaocha test runner
-        ))
+  ;; enable Kaocha test runner
+  (setq clojure-enable-kaocha-runner t))
 
 ;; End of Clojure
 ;; ---------------------------------------
