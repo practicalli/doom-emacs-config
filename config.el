@@ -112,7 +112,8 @@
 (setq ws-butler-global-exempt-modes '(special-mode comint-mode term-mode eshell-mode diff-mode))
 
 ;; Completion results order by history of use and then alphabetical
-(setq vertico-sort-function 'vertico-sort-history-alpha)
+;; - does not work for autocomplete popups
+;; (setq vertico-sort-function 'vertico-sort-history-alpha)
 
 ;; ---------------------------------------
 
