@@ -49,7 +49,9 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
-
+;; Use the latest available packages for Clojure
+;; - cider, clojure-mode
+(unpin! (:lang clojure))
 
 ;; Koacha test runner in Emacs
 (package! kaocha-runner)
@@ -58,3 +60,7 @@
 ;; latest release 2020-11-17
 (package! keycast :pin "16d9961d15536054632be1eff75fd0fb1a4420f8")
 
+;; Very large files mode loads large files in chunks to open ridiculously large files.
+
+;; (package! vlf :recipe (:host github :repo "m00natic/vlfi" :files ("*.el"))
+;;   :pin "cc02f2533782d6b9b628cec7e2dcf25b2d05a27c" :disable t)
