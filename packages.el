@@ -60,6 +60,7 @@
 ;; latest release 2020-11-17
 (package! keycast :pin "16d9961d15536054632be1eff75fd0fb1a4420f8")
 
+(package! clojure-snippets)
 ;; Very large files mode loads large files in chunks to open ridiculously large files.
 
 ;; (package! vlf :recipe (:host github :repo "m00natic/vlfi" :files ("*.el"))

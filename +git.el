@@ -10,7 +10,7 @@
 ;; Use XDG_CONFIG_HOME location or HOME
 ;; Optional:  (setq auth-source-cache-expiry nil)   ; default is 7200 (2h)
 (setq auth-sources (list
-                    (concat (getenv "XDG_CONFIG_HOME") "/authinfo.gpg")
+                    (concat (getenv "XDG_CACHE_HOME") "/authinfo.gpg")
                     "~/.authinfo.gpg"))
 
 
@@ -24,23 +24,23 @@
 ;; - checks for overlong-summary-line non-empty-line
 ;; (setq git-commit-summary-max-length 50
 ;;       git-commit-style-convention-checks '(overlong-summary-line non-empty-second-line))
-(setq git-commit-summary-max-length 60
+(after! magit (setq git-commit-summary-max-length 60
 
-      ;; Highlight specific characters changed
-      magit-diff-refine-hunk 'all
+                    ;; Highlight specific characters changed
+                    magit-diff-refine-hunk 'all
 
-      ;; Show project TODO lines in Magit Status
-      magit-todos-mode t
+                    ;; Show project TODO lines in Magit Status
+                    magit-todos-mode t
 
-      ;; Show Libravatar of commit author
-      magit-revision-show-gravatars '("^Author:     " . "^Commit:     ")
-      )
+                    ;; Show Libravatar of commit author
+                    magit-revision-show-gravatars '("^Author:     " . "^Commit:     ")
+                    ))
 
 
 ;; Location of Git repositories
 ;; define paths and level of sub-directories to search
 (setq magit-repository-directories
-      '(("~/projects/" . 2)))
+      '(("~/work/" . 2)))
 
 
 ;; Number of topics displayed (issues, pull requests)
@@ -54,10 +54,9 @@
 ;; GitHub user and organization accounts owned
 ;; used by @ c f  to create a fork
 (setq forge-owned-accounts
-      '(("practicalli" "practicalli-john"
-         "ClojureBridgeLondon" "ldnclj"
-         "clojure-hacks"
-         "reclojure")))
+      '(("trovemoney" "tempo"
+         "frap" "frap"
+         )))
 
 
 ;; Blacklist specific accounts, over-riding forge-owned-accounts

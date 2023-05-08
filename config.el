@@ -6,8 +6,11 @@
 
 ;; User Identify (optional)
 ;; e.g. GPG configuration, email clients, file templates and snippets
-(setq user-full-name "Practicalli John"
-      user-mail-address "john@practical.li")
+ (setq
+    user-full-name "Andrés Gasson"
+    user-mail-address "gas@troveplatform.co.nz"
+    github-account-name "frap")
+
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -21,12 +24,13 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
-;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
-
-(setq doom-font (font-spec :family "Fira Code" :size 16)
-      doom-big-font (font-spec :family "Fira Code" :size 24)
-      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 16))
+(setq doom-font (font-spec :family "Fira Code" :size 14)
+    ;;  doom-font (font-spec :family "Iosevka Curly" :size 13)
+      doom-big-font (font-spec :family "JetBrains Mono" :size  18)
+      doom-variable-pitch-font (font-spec :family "Overpass" :size 14)
+      doom-unicode-font (font-spec :family "JuliaMono" :size 14)
+      doom-serif-font (font-spec :family "IBM Plex Mono" :size 14)
+      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 14))
 
 
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
@@ -37,7 +41,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-gruvbox)
+(setq doom-theme 'doom-gruvbox-light)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -45,7 +49,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/logseq/")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -96,14 +100,15 @@
 ;; - add major mode icon
 (after! doom-modeline
   (setq doom-modeline-persp-name t
-        doom-modeline-major-mode-icon t))
+        doom-modeline-major-mode-icon t
+        doom-modeline-window-width-limit (- fill-column 10)))
 
 
 ;; Projects
 ;; Define a project path to discover projects using SPC Tab D
 ;; https://docs.projectile.mx/projectile/usage.html
 ;; (setq projectile-project-search-path '("~/projects/" "~/work/" ("~/github" . 1)))
-(setq projectile-project-search-path '(("~/projects" . 2) ("~/.config" . 1)))
+(setq projectile-project-search-path '(("~/work" . 2) ("~/.config" . 1)))
 
 ;; Disable projectile cache - saves requirement to invalidate cache when moving files
 ;; (setq projectile-enable-caching nil)
