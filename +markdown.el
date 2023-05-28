@@ -37,3 +37,15 @@
          :desc "Markup hiding"     "m" #'markdown-toggle-markup-hiding
          :desc "Wiki links"        "w" #'markdown-toggle-wiki-links
          :desc "GFM checkbox"      "x" #'markdown-toggle-gfm-checkbox))
+
+(use-package! org-protocol
+  :after org
+  :config
+  (add-to-list 'org-protocol-protocol-alist
+               '("org-find-file" :protocol "find-file" :function org-protocol-find-file :kill-client nil))
+  (defun org-protocol-find-file (fname)
+    "Process org-protocol://find-file?path= style URL."
+    (let ((f (plist-get (org-protocol-parse-parameters fname nil '(:path)) :path)))
+      (find-file f)
+      (raise-frame)
+      (select-frame-set-input-focus (selected-frame)))))
