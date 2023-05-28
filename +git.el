@@ -26,6 +26,7 @@
 ;;       git-commit-style-convention-checks '(overlong-summary-line non-empty-second-line))
 (after! magit (setq git-commit-summary-max-length 60
 
+                    magit-push-current-set-remote-if-missing nil
                     ;; Highlight specific characters changed
                     magit-diff-refine-hunk 'all
 
@@ -34,13 +35,15 @@
 
                     ;; Show Libravatar of commit author
                     magit-revision-show-gravatars '("^Author:     " . "^Commit:     ")
+
+                    magit-branch-prefer-remote-upstream '("master" "main")
                     ))
 
 
 ;; Location of Git repositories
 ;; define paths and level of sub-directories to search
-(setq magit-repository-directories
-      '(("~/work/" . 2)))
+;; (setq magit-repository-directories
+;;       '(("~/work/" . 2)))
 
 
 ;; Number of topics displayed (issues, pull requests)
@@ -48,15 +51,15 @@
 ;; or `forge-toggle-closed-visibility'
 ;; set closed to 0 to never show closed issues
 ;; (setq  forge-topic-list-limit '(100 . 0))
-(setq  forge-topic-list-limit '(100 . -10))
+;;(setq  forge-topic-list-limit '(100 . -10))
 
 
 ;; GitHub user and organization accounts owned
 ;; used by @ c f  to create a fork
-(setq forge-owned-accounts
-      '(("trovemoney" "tempo"
-         "frap" "frap"
-         )))
+;; (setq forge-owned-accounts
+;;       '(("trovemoney" "tempo"
+;;          "frap" "frap"
+;;          )))
 
 
 ;; Blacklist specific accounts, over-riding forge-owned-accounts
