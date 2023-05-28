@@ -58,10 +58,10 @@
        ;; vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        ;;window-select     ; visually switch windows
        workspaces        ; tab emulation, persistence & separate workspaces
-       ;;zen               ; distraction-free coding or writing
+       zen               ; distraction-free coding or writing
 
        :editor
-       (evil +everywhere); come to the dark side, we have cookies
+      ;; (evil +everywhere); come to the dark side, we have cookies
        file-templates    ; auto-snippets for empty files
        fold              ; (nigh) universal code folding
        (format +onsave)  ; automated prettiness
@@ -72,7 +72,7 @@
        ;;parinfer          ; turn lisp into python, sort of
        ;;rotate-text       ; cycle region at point between text candidates
        snippets          ; my elves. They type so I don't have to
-       ;;word-wrap         ; soft wrapping with language-aware indent
+       word-wrap         ; soft wrapping with language-aware indent
 
        :emacs
        (dired +ranger)            ; making dired pretty [functional]
@@ -168,6 +168,7 @@
        ;;purescript        ; javascript, but functional
        (python            ; beautiful is better than ugly
         +pyright
+       ;; +pipenv
         +lsp)
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
@@ -195,7 +196,7 @@
        :app
        ;;calendar
        ;;emms
-       ;;everywhere        ; *leave* Emacs!? You must be joking
+       everywhere        ; *leave* Emacs!? You must be joking
        ;;irc               ; how neckbeards socialize
        ;;(rss +org)        ; emacs as an RSS reader
        ;;twitter           ; twitter client https://twitter.com/vnought

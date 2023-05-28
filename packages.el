@@ -55,12 +55,18 @@
 
 ;; Koacha test runner in Emacs
 (package! kaocha-runner)
+(package! clojure-snippets)
+(package! clj-ns-name
+  :recipe (:host github :repo "corgi-emacs/clj-ns-name" :files ("clj-ns-name.el")))
+(package! pprint-to-buffer
+  :recipe (:host github :repo "plexus/plexmacs" :files ("pprint-to-buffer/pprint-to-buffer.el")))
+(package! fennel-mode)
 
 ;; Keycast
 ;; latest release 2020-11-17
 (package! keycast :pin "16d9961d15536054632be1eff75fd0fb1a4420f8")
 
-(package! clojure-snippets)
+(package! deadgrep)
 ;; Very large files mode loads large files in chunks to open ridiculously large files.
 
 ;; (package! vlf :recipe (:host github :repo "m00natic/vlfi" :files ("*.el"))
