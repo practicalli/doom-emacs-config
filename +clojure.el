@@ -9,11 +9,29 @@
 ;; Configure CIDER variables & LSP hooks
 
 (use-package! clojure-mode
+  :magic ("^#![^\n]*/\\(clj\\|clojure\\|bb\\|nbb\\)" . clojure-mode)
   :config
   (setq clojure-indent-style 'align-arguments
         clojure-align-forms-automatically t
         clojure-toplevel-inside-comment-form t  ;; evaluate expressions in comment as top level
-        ))
+        )
+   (setq clojure-toplevel-inside-comment-form t
+        ;; Because of CIDER's insistence to send forms to all linked REPLs, we
+        ;; *have* to be able to switch cljc buffer to clj/cljs mode without
+        ;; cider complaining.
+        clojure-verify-major-mode nil)
+  (defvar org-babel-default-header-args:clojure '((:results . "silent")))'
+  (defun org-babel-execute:clojure (body params)
+    "Evaluate a block of Clojure code with Babel."
+    (lisp-eval-string body))
+  (defun clerk-show ()
+    (interactive
+     (when-let
+         ((filename
+           (buffer-file-name)))
+       (save-buffer)
+       (cider-interactive-eval
+        (concat "(nextjournal.clerk/show! \"" filename "\")"))))))
 
 
 (use-package! cider
@@ -79,7 +97,7 @@
           (delete-char cmtstr-len)
         (insert cmtstr))
       (goto-char ending-point-pos)))
-  (evil-normal-state))
+  (evil-emacs-state))
 
 ;; Assign keybinding to the toggle-reader-comment-sexp function
 (define-key global-map (kbd "C-#") 'clojure-toggle-reader-comment-sexp)
@@ -110,6 +128,33 @@
 ;; - , d p D - portal clear
 
 ;; ---------------------------------------
+(defvar project-dir "~/work/frap/bb")
+
+(defun corgi/cider-jack-in-babashka (&optional project-dir)
+  "Start a utility CIDER REPL backed by Babashka, not related to a
+specific project."
+  (interactive)
+  (let ((project-dir (or project-dir user-emacs-directory)))
+    (nrepl-start-server-process
+     project-dir
+     "bb --nrepl-server 0"
+     (lambda (server-buf)
+       (set-process-query-on-exit-flag
+        (get-buffer-process server-buf) nil)
+       (cider-nrepl-connect
+        (list :repl-buffer server-buf
+              :repl-type 'clj
+              :host (plist-get nrepl-endpoint :host)
+              :port (plist-get nrepl-endpoint :port)
+              :project-dir project-dir
+              :session-name "babashka"
+              :repl-init-function (lambda ()
+                                    (setq-local cljr-suppress-no-project-warning t
+                                                cljr-suppress-middleware-warnings t
+                                                process-query-on-exit-flag nil)
+                                    (set-process-query-on-exit-flag
+                                     (get-buffer-process (current-buffer)) nil)
+                                    (rename-buffer "*babashka-repl*"))))))))
 
 
 ;; ---------------------------------------
