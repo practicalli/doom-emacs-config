@@ -18,6 +18,8 @@
         lsp-semantic-tokens-enable t
         lsp-idle-delay 0.2 ;; Smoother LSP features response in cost of performance (Most servers I use have good performance)
         lsp-use-plists nil)
+  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\venv\\'")
+  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\env\\'")
   (add-hook 'lsp-after-apply-edits-hook (lambda (&rest _) (save-buffer)))
   (add-hook 'lsp-mode-hook (lambda () (setq-local company-format-margin-function #'company-vscode-dark-icons-margin))))
 
@@ -36,5 +38,9 @@
         lsp-log-io t  ; Log client-server json communication
         lsp-ui-peek-enable t))
 
+(use-package! lsp-yaml
+  ;;:config
+  ;;(setq lsp-yaml-single-quote t)
+  )
 ;; End of LSP
 ;; ---------------------------------------
