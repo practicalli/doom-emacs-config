@@ -1,8 +1,8 @@
 * Practicalli Doom Emacs Config
 A personal configuration for Doom Emacs with a focus on creating a similar key binding and menu experience to that of Spacemacs, as [[https://jr0cket.co.uk/2015/08/spacemacs-first-impressions-from-an-emacs-driven-developer.html][Practicalli has used Spacemacs since 2015]].
 
-** Project on hold
-Practicalli is not actively developing this configuration, although it should be useable with current versions of Doom Emacs and Emacs 28 onward.
+** To Archive
+Practicalli is not actively developing this configuration, although it should be useable with current versions of Doom Emacs and Emacs 28 onward as it is mostly key binding configuration.
 
 ** Overview
 
