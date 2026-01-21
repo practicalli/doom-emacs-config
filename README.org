@@ -1,4 +1,7 @@
-* Practicalli Doom Emacs Config
+# ARCHIVED: Practicalli Doom Emacs Config
+
+Practicalli experimented with Doom Emacs, but found [Neovim](https://practical.li/neovim) a more relevant development experience.
+
 A personal configuration for Doom Emacs with a focus on creating a similar key binding and menu experience to that of Spacemacs, as [[https://jr0cket.co.uk/2015/08/spacemacs-first-impressions-from-an-emacs-driven-developer.html][Practicalli has used Spacemacs since 2015]].
 
 ** To Archive
